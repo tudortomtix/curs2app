@@ -23,10 +23,10 @@ class ViewController: UIViewController {
     
     func showAlert(){
         let alertView = UIAlertView(
-            title: "Info",
-            message: "Hello World",
+            title: "Titlu de test",
+            message: "Scriu un mesaj sa vad ca apare",
             delegate: nil,
-            cancelButtonTitle: "ok"
+            cancelButtonTitle: "Un fel de OK"
             )
         
         alertView.show()
