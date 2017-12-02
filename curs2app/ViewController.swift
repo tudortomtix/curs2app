@@ -9,17 +9,53 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    func printHelloWorld(){
+        print("Hello World")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+      //  printHelloWorld()
+        showAlert()
+   }
+    
+    
+    func showAlert(){
+        let alertView = UIAlertView(
+            title: "Info",
+            message: "Hello World",
+            delegate: nil,
+            cancelButtonTitle: "ok"
+            )
+        
+        alertView.show()
     }
-
-
+    
+    func showAlertController(){
+        let alertStyle = UIAlertControllerStyle.actionSheet
+        let alertController = UIAlertController(
+            title: "Info",
+            message: "Hello World",
+            preferredStyle: alertStyle
+        )
+        // my action style
+        let actionStyle = UIAlertActionStyle.destructive
+        // Ok button
+        let action = UIAlertAction(
+            title: "Ok",
+            style: actionStyle,
+            handler: nil
+        )
+        // add action to alert
+        alertController.addAction(action)
+        // show alert controller
+        self.present(
+            alertController,
+            animated: true,
+            completion: nil
+            
+        )
+    }
 }
 
